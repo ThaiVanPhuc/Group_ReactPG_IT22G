@@ -136,6 +136,13 @@
 .about .container .box .icon .detail {
     margin-top: 10px;
     margin-left: 10px;
+
+}
+
+.about .container .box .detail {
+    line-height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .about .container .box .icon .detail h3 {
@@ -263,6 +270,11 @@
 
 }
 
+.banner .container img {
+    width: 350px;
+    height: 430px;
+}
+
 .banner .container .detail h4 {
     color: #e3edf6;
     font-size: 14px;
@@ -274,14 +286,7 @@
     margin-right: 20%;
     letter-spacing: 1px;
     color: #fff;
-}
-
-.banner .container .detail p {
-    margin-top: 30px;
-    color: #fff;
-    font-size: 32px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
+    margin-bottom: 40px;
 }
 
 .banner .container .detail .link {

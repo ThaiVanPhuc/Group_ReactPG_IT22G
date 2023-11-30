@@ -163,11 +163,10 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     <div className='detail'>
                         <h4>LATEST TECHNOLOGY ADDED</h4>
                         <h3>Apple iPad 10.2 9th Gen - 2021</h3>
-                        <p>986</p>
                         <Link to='/product' className='link'>Shop Now  <BsArrowRight /> </Link>
                     </div>
                     <div className='img_box'>
-                        <img src='./img/box-Acess/hinh1.png'></img>
+                        <img src='./img/product/ipad.png'></img>
                     </div>
                 </div>
             </div>

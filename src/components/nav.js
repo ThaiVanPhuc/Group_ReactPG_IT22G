@@ -23,7 +23,7 @@ const Nav = ({ searchbtn }) => {
             <div className='main_header'>
                 <div className='container'>
                     <div className='logo'>
-                        <img src='./img/box-Banner/logo.png'></img>
+                        <img src='./img/box-Banner/logo.gif'></img>
                     </div>
                     <div className='search_box'>
                         <input type='text' value={search} placeholder='Nhập Tên Sản Phẩm' autoComplete='off' onChange={(e) => setSearch(e.target.value)}>

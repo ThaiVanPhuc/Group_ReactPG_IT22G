@@ -7,43 +7,42 @@ import './footer.css'
 const Footer = () => {
     return (
         <>
-        <div className="footer">
-            <div className="container">
-                <div className="about">
-                    <div className="logo">
-                        <img src='.....' alt="logo"></img>
-                    </div>
-                    <div className="detail">
-                        <p> we are a team of designers that creat</p>
-                        <div className="icon">
-                            <li><RiFacebookFill /></li>
-                            <li><AiOutlineInstagram /></li>
-                            <li><AiOutlineTwitter /></li>
-                            <li><BsYoutube /></li>
+            <div className="footer">
+                <div className="container">
+                    <div className="about">
+                        <div className="logo">
+                            <img src='./img/box-Banner/logo.gif' alt="logo"></img>
+                        </div>
+                        <div className="detail">
+                            <div className="icon">
+                                <li><RiFacebookFill /></li>
+                                <li><AiOutlineInstagram /></li>
+                                <li><AiOutlineTwitter /></li>
+                                <li><BsYoutube /></li>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="acount">
-                    <h3>My Acount</h3>
-                    <ul>
-                        <li>Acount</li>
-                        <li>Order</li>
-                        <li>Cart</li>
-                        <li>shipping</li>
-                        <li>return</li>
-                    </ul>
-                </div>
-                <div className="page">
-                    <h3>Pages</h3>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Term and Condition</li>
-                    </ul>
+                    <div className="acount">
+                        <h3>Shop Member</h3>
+                        <ul>
+                            <li>Thái Văn Phúc</li>
+                            <li>Nguyễn Văn Hùng</li>
+                            <li>Cao Nguyên Bình An</li>
+                            <li>Phan Văn Thiên</li>
+                            <li>Nguyễn Văn Hùng</li>
+                        </ul>
+                    </div>
+                    <div className="page">
+                        <h3>Pages</h3>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>Term and Condition</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }
