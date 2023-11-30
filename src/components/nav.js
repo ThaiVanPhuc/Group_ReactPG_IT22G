@@ -63,7 +63,7 @@ const Nav = ({ searchbtn }) => {
                                 <Link to='/product' className='link'>Product</Link>
                             </li>
                             <li>
-                                <Link to='/about' className='link'>about</Link>
+                                <Link to='/about' className='link'>About</Link>
                             </li>
                             <li>
                                 <Link to='/contact' className='link'>Contact</Link>

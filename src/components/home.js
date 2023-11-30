@@ -51,7 +51,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         <Link to='/product' className='link'>Shop Now <BsArrowRight /></Link>
                     </div>
                     <div className='img_box'>
-                        <img src='./img/box-Acess/hinh1.png' />
+                        <img src='./img/box-Banner/Laptop_image.png' />
                     </div>
                 </div>
             </div>

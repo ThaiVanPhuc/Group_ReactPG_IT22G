@@ -5,7 +5,7 @@ const Homeproduct =
             Title: "Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB",
             Cat: 'Tablet',
             Price: '723',
-            Img: '../img/box-Acess/hinh1.png'
+            Img: './img/box-Banner/Laptop_image.png'
         },
         {
             id: 2,
