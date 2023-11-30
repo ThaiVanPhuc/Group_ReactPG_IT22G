@@ -44,7 +44,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         </div>
                     </div> : null
             }
-            <div className='top-banner'>
+            <div className='top_banner'>
                 <div className='container'>
                     <div className='detail'>
                         <h2> The Best Note Book Collection 2023</h2>
@@ -59,7 +59,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                 <div className='container'>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Acess/hinh1.png' />
+                            <img src='./img/box-Categories-Section/TV.png' />
                         </div>
                         <div className='detail'>
                             <p>23 products</p>
@@ -67,7 +67,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Acess/hinh1.png' />
+                            <img src='./img/box-Categories-Section/Headphone.png' />
                         </div>
                         <div className='detail'>
                             <p>18 products</p>
@@ -75,7 +75,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Acess/hinh1.png' />
+                            <img src='./img/box-Categories-Section/Laptop.png' />
                         </div>
                         <div className='detail'>
                             <p>52 products</p>
@@ -83,7 +83,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Acess/hinh1.png' />
+                            <img src='./img/box-Categories-Section/Camera.png' />
                         </div>
                         <div className='detail'>
                             <p>63 products</p>
