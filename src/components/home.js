@@ -18,16 +18,15 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
         <>
             {
                 close ?
-                    <div className='product_detail'>
-
+                    <div className='products_detail'>
                         <div className='container'>
                             <button onClick={() => setClose(false)} className='closebtn'><AiOutlineCloseCircle /></button>
                             {
                                 detail.map((curElm) => {
                                     return (
                                         <div className='productbox'>
-                                            <div className='img-box'>
-                                                <img src={curElm.img} alt={curElm.Title}></img>
+                                            <div className='img_box'>
+                                                <img src={curElm.Img} alt={curElm.Title}></img>
                                             </div>
                                             <div className='detail'>
                                                 <h4>{curElm.Cat}</h4>
@@ -51,7 +50,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         <Link to='/product' className='link'>Shop Now <BsArrowRight /></Link>
                     </div>
                     <div className='img_box'>
-                        <img src='./img/box-Banner/Laptop_image.png' />
+                        <img src='./img/product/ipad.png' />
                     </div>
                 </div>
             </div>
@@ -59,7 +58,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                 <div className='container'>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Categories-Section/TV.png' />
+                            <img src='./img/product/tv.png' />
                         </div>
                         <div className='detail'>
                             <p>23 products</p>
@@ -67,7 +66,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Categories-Section/Headphone.png' />
+                            <img src='./img/product/watch.png' />
                         </div>
                         <div className='detail'>
                             <p>18 products</p>
@@ -75,7 +74,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Categories-Section/Laptop.png' />
+                            <img src='./img/product/Headphone.png' />
                         </div>
                         <div className='detail'>
                             <p>52 products</p>
@@ -83,7 +82,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/box-Categories-Section/Camera.png' />
+                            <img src='./img/product/ipad.png' />
                         </div>
                         <div className='detail'>
                             <p>63 products</p>

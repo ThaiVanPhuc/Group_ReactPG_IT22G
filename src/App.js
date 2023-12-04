@@ -30,11 +30,11 @@ const App = () => {
       return x.id === product.id
     })
     if (exsit) {
-      alert("This Product is already added to cart")
+      alert("Sản phẩm này đã được thêm vào giỏ hàng")
     }
     else {
       setCart([...cart, { ...product, qty: 1 }])
-      alert("Product is added to cart")
+      alert("Sản phẩm đã được thêm vào giỏ hàng")
     }
   }
   console.log(cart)

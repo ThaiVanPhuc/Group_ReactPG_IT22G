@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './cart.css'
+
 const Cart = ({ cart, setCart }) => {
     // increace qty
     const incqty = (product) => {
@@ -33,6 +34,7 @@ const Cart = ({ cart, setCart }) => {
             }))
         }
     }
+
     const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0)
     return (
         <>
@@ -74,7 +76,7 @@ const Cart = ({ cart, setCart }) => {
                 }
             </div>
             {
-                cart.lenght > 0 &&
+                cart.length > 0 &&
                 <>
                     <h2 className='totalprice'>total: $ {Totalprice}</h2>
                     <button className='checkout'>Checkout</button>
