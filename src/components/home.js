@@ -11,7 +11,7 @@ import { FaEye } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import Homeproduct from './homeproduct';
 import './home.css'
-
+import Chatbox from './chatbox';
 
 const Home = ({ detail, view, close, setClose, addtocart }) => {
     return (
@@ -168,6 +168,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         <img src='./img/product/ipad.png'></img>
                     </div>
                 </div>
+                <Chatbox />
             </div>
         </>
     )

@@ -23,7 +23,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="acount">
-                        <h3>Shop Member</h3>
+                        <h3>Shop Manager</h3>
                         <ul>
                             <li>Thái Văn Phúc</li>
                             <li>Nguyễn Văn Hùng</li>
