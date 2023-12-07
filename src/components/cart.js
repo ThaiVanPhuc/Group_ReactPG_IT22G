@@ -5,6 +5,7 @@ import './cart.css'
 
 const Cart = ({ cart, setCart }) => {
     // increace qty
+
     const incqty = (product) => {
         const exsit = cart.find((x) => {
             return x.id === product.id

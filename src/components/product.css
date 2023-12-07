@@ -1,59 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-.products{
+.products {
     padding: 30px 40px;
     width: 100%;
 }
-.products h2{
+
+.products h2 {
     font-size: 42px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 300;
     color: #010f1c;
 }
-.products p{
+
+.products p {
     margin-top: 20px;
     color: #9a9a9a;
 }
-.products .container{
+
+.products .container {
     margin-top: 20px;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.products .container .filter{
+
+.products .container .filter {
     padding: 20px 30px;
 }
-.products .container .filter .categories h3{
+
+.products .container .filter .categories h3 {
     color: #010f1c;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
 }
-.products .container .filter .categories ul{
+
+.products .container .filter .categories ul {
     margin-top: 10px;
 }
 
-.products .container .filter .categories ul li{
+.products .container .filter .categories ul li {
     list-style: none;
     color: #010f1c;
     margin-top: 20px;
     cursor: pointer;
 }
-.products .container .productbox{
+
+.products .container .productbox {
     margin-right: 0%;
 }
-.products .container .productbox .contant{
+
+.products .container .productbox .contant {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.products .container .productbox .contant .box{
+
+.products .container .productbox .contant .box {
     padding: 10px 20px;
     overflow: hidden;
     width: 280px;
@@ -65,20 +74,24 @@
     border-radius: 5px;
     margin-right: 20px;
 }
-.products .container .productbox .contant .box:hover{
+
+.products .container .productbox .contant .box:hover {
     box-shadow: rgba(0, 0, 0, 0.24)0px 3px 8px;
 }
-.products .container .productbox .contant .box .img_box{
+
+.products .container .productbox .contant .box .img_box {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e2e0e0;
 }
-.products .container .productbox .contant .box .img_box{
+
+.products .container .productbox .contant .box .img_box {
     width: 300px;
     height: 250px;
     margin-right: 50px;
 }
-.products .container .productbox .contant .box .img_box .icon{
+
+.products .container .productbox .contant .box .img_box .icon {
     z-index: 1;
     position: relative;
     right: 0;
@@ -87,10 +100,12 @@
     margin-top: 20px;
     transition: 0.5s;
 }
-.products .container .productbox .contant .box:hover .img_box .icon{
+
+.products .container .productbox .contant .box:hover .img_box .icon {
     transform: translate(-130px);
 }
-.products .container .productbox .contant .box .img_box .icon li{
+
+.products .container .productbox .contant .box .img_box .icon li {
     list-style: none;
     padding: 10px 10px;
     color: #010f1c;
@@ -100,32 +115,38 @@
     transition: 0.5s;
     font-size: 18px;
 }
-.products .container .productbox .contant .box .img_box .icon li:hover{
+
+.products .container .productbox .contant .box .img_box .icon li:hover {
     background: #0989ff;
     color: #fff;
 
 }
-.products .container .productbox .contant .box .detail{
+
+.products .container .productbox .contant .box .detail {
     margin-top: 10px;
 }
-.products .container .productbox .contant .box .detail h3{
+
+.products .container .productbox .contant .box .detail h3 {
     font-size: 16px;
     margin-top: 5px;
     color: #010f1c;
     transition: 0.5s;
 
 }
-.products .container .productbox .contant .box:hover .detail h3{
+
+.products .container .productbox .contant .box:hover .detail h3 {
     color: #0989ff;
 }
-.products .container .productbox .contant .box .detail h4{
+
+.products .container .productbox .contant .box .detail h4 {
     margin-top: 5px;
     font-size: 14px;
     color: #0989ff;
     letter-spacing: 1px;
- }
- .products_detail{
-    margin-top:30px;
+}
+
+.products_detail {
+    margin-top: 30px;
     padding: 30px 40px;
     width: 100%;
     height: 120%;
@@ -133,8 +154,9 @@
     margin-top: -20%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.24);
- }
- .products_detail .container{
+}
+
+.products_detail .container {
     margin-top: 7%;
     margin-left: 8%;
     width: 1000px;
@@ -143,56 +165,65 @@
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- }
- .products_detail .container .closebtn{
+}
+
+.products_detail .container .closebtn {
     margin-left: 100%;
-    border:none;
+    border: none;
     outline: none;
     background: none;
     font-size: 22px;
     cursor: pointer;
- }
- .products_detail .container .productbox{
+}
+
+.products_detail .container .productbox {
     max-width: 100%;
     display: flex;
     padding: 20px 30px;
     margin-top: 20px;
     justify-content: space-between;
- }
- .products_detail .container .productbox .img_box{
+}
+
+.products_detail .container .productbox .img_box {
     padding: 20px 30px;
     width: 300px;
     height: 350px;
     background: #f1f1f1;
- }
- .products_detail .container .productbox .img_box img{
+}
+
+.products_detail .container .productbox .img_box img {
     width: 250px;
     height: 250px;
- }
- .products_detail .container .productbox .detail h4{
+}
+
+.products_detail .container .productbox .detail h4 {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 200;
     color: #9a9a9a;
     letter-spacing: 1px;
- }
- .products_detail .container .productbox .detail h2{
+}
+
+.products_detail .container .productbox .detail h2 {
     margin-top: 20px;
     font-size: 32px;
     color: #010f1c;
     text-transform: capitalize;
- }
- .products_detail .container .productbox .detail p{
+}
+
+.products_detail .container .productbox .detail p {
     margin-top: 10px;
     color: #4a4a4a;
- }
- .products_detail .container .productbox .detail h3{
+}
+
+.products_detail .container .productbox .detail h3 {
     margin-top: 10px;
     color: #010f1c;
     font-size: 32px;
     letter-spacing: 1px;
- }
- .products_detail .container .productbox .detail button{
+}
+
+.products_detail .container .productbox .detail button {
     margin-top: 30px;
     padding: 15px 60px;
     font-size: 16px;
@@ -202,7 +233,8 @@
     border: none;
     outline: none;
     cursor: pointer;
- }
- .products_detail .container .productbox .detail button:hover{
+}
+
+.products_detail .container .productbox .detail button:hover {
     background: #0989ff;
- }
+}

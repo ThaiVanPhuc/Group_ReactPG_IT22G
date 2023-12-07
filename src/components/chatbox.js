@@ -35,7 +35,6 @@ const Chatbox = () => {
     const generateResponse = () => {
         const message = shopQA[userMessage];
         setUserMessage('');
-
         if (message) {
             appendMessageToChat("outgoing", userMessage);
             appendMessageToChat("incoming", message);
@@ -83,7 +82,7 @@ const Chatbox = () => {
     useEffect(() => {
         const chatInputTextarea = chatInputRef.current;
         const questionBoxElement = questionBoxRef.current;
-
+        appendMessageToChat("incoming", "Hi there! How can I help you today?");
         if (chatInputTextarea && questionBoxElement) {
             chatInputTextarea.addEventListener('click', function () {
                 questionBoxElement.style.display = 'block';
