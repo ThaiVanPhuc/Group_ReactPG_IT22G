@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs';
 import { FiTruck } from 'react-icons/fi';
@@ -13,7 +13,45 @@ import Homeproduct from './homeproduct';
 import './home.css'
 import Chatbox from './chatbox';
 
+import "react-multi-carousel/lib/styles.css";
+
+
 const Home = ({ detail, view, close, setClose, addtocart }) => {
+    const sliderRef = useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [autoSlideInterval, setAutoSlideInterval] = useState(null);
+
+    const handlePrev = () => {
+        setCurrentSlide((prevSlide) => (prevSlide - 1 + 4) % 4);
+    };
+
+    const handleNext = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % 4);
+    };
+
+    const startAutoSlide = () => {
+        setAutoSlideInterval(setInterval(handleNext, 3000));
+        sliderRef.current.addEventListener("mouseenter", stopAutoSlide);
+        sliderRef.current.addEventListener("mouseleave", startAutoSlide);
+    };
+
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+    };
+
+    useEffect(() => {
+        // Initial setup
+        startAutoSlide();
+
+        // Cleanup
+        return () => {
+            stopAutoSlide();
+            sliderRef.current.removeEventListener("mouseenter", stopAutoSlide);
+            sliderRef.current.removeEventListener("mouseleave", startAutoSlide);
+        };
+    }, [currentSlide]);
+
+
     return (
         <>
             {
@@ -55,41 +93,54 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                 </div>
             </div>
             <div className='product_type'>
-                <div className='container'>
+
+                {/* slider */}
+
+                <div
+                    className='container'
+                    ref={sliderRef}
+                >
+                    <button className='prev-btn' onClick={handlePrev}>&#8249;</button>
+
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/product/tv.png' />
+                            <img src='./img/product/tv.png' alt="TV" />
                         </div>
                         <div className='detail'>
-                            <p>23 products</p>
                         </div>
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/product/watch.png' />
+                            <img src='./img/product/watch.png' alt="Watch" />
                         </div>
                         <div className='detail'>
-                            <p>18 products</p>
                         </div>
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/product/Headphone.png' />
+                            <img src='./img/product/Headphone.png' alt="Headphone" />
                         </div>
                         <div className='detail'>
-                            <p>52 products</p>
                         </div>
                     </div>
                     <div className='box'>
                         <div className='img_box'>
-                            <img src='./img/product/ipad.png' />
+                            <img src='./img/product/ipad.png' alt="iPad" />
                         </div>
                         <div className='detail'>
-                            <p>63 products</p>
                         </div>
                     </div>
+
+                    <button className='next-btn' onClick={handleNext}>&#8250;</button>
                 </div>
+
+                {/* end slider */}
             </div>
+
+
+
+
+
             <div className='about'>
                 <div className='container'>
                     <div className='box'>
