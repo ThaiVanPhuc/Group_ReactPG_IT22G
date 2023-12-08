@@ -18,12 +18,15 @@ import 'react-multi-carousel/lib/styles.css';
 const Home = ({ detail, view, close, setClose, addtocart }) => {
     const sliderRef = useRef();
     const [currentImage, setCurrentImage] = useState(0);
+    const visibleImages = 4;
 
     const images = [
         './img/product/tv.png',
         './img/product/watch.png',
         './img/product/Headphone.png',
         './img/product/ipad.png',
+        './img/product/hinh2.png',
+        './img/product/hinh1.png',
     ];
 
     const handlePrev = () => {
@@ -91,7 +94,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                     <button className='prev-btn' onClick={handlePrev}>
                         &#8249;
                     </button>
-                    {images.map((image, index) => (
+                    {images.slice(0, visibleImages).map((image, index) => (
                         <div className='box' key={index}>
                             <div className='img_box'>
                                 <img src={images[(index + currentImage) % images.length]} alt={`Image ${index}`} />
