@@ -22,12 +22,11 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
     const addComment = (newComment) => {
         setComments([...comments, newComment]);
     };
-    
+
     return (
         <>
             {close ? (
-                <div className='product_detail'>
-                    
+                <div className='products_detail'>
                     <div className='container'>
                         <button onClick={() => setClose(false)} className='closebtn'>
                             <AiOutlineCloseCircle />
@@ -53,22 +52,22 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                     <div className='comments-section'>
                         <h3>Comments</h3>
                         <div className='comments-list'>
-                                {comments.map((comment, index) => (
-                                    <div className='comment' key={index}>
-                                        <div className='star-and-details'>
-                                            <div className='star-icon'>
-                                                {[...Array(parseInt(comment.stars))].map((star, index) => (
+                            {comments.map((comment, index) => (
+                                <div className='comment' key={index}>
+                                    <div className='star-and-details'>
+                                        <div className='star-icon'>
+                                            {[...Array(parseInt(comment.stars))].map((star, index) => (
                                                 <AiFillStar className="gold-star" key={index} />
                                             ))}
-                                            </div>
-                                            <div className='comment-details'>
-                                                <p><strong>{comment.name}</strong></p>
-                                                <p>{comment.comment}</p>
-                                            </div>
+                                        </div>
+                                        <div className='comment-details'>
+                                            <p><strong>{comment.name}</strong></p>
+                                            <p>{comment.comment}</p>
                                         </div>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
+                        </div>
                         <form onSubmit={(e) => {
                             e.preventDefault();
                             const newComment = {
