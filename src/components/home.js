@@ -40,14 +40,15 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
     };
 
     useEffect(() => {
+        const slider = sliderRef.current;
         // Initial setup
         startAutoSlide();
 
         // Cleanup
         return () => {
             stopAutoSlide();
-            sliderRef.current.removeEventListener("mouseenter", stopAutoSlide);
-            sliderRef.current.removeEventListener("mouseleave", startAutoSlide);
+            slider.current.removeEventListener("mouseenter", stopAutoSlide);
+        slider.current.removeEventListener("mouseleave", startAutoSlide);
         };
     }, [currentSlide]);
 
@@ -88,7 +89,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         <Link to='/product' className='link'>Shop Now <BsArrowRight /></Link>
                     </div>
                     <div className='img_box'>
-                        <img src='./img/product/ipad.png' />
+                    <img src='./img/product/ipad.png' alt="iPad" />
                     </div>
                 </div>
             </div>

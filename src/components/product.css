@@ -238,3 +238,38 @@
 .products_detail .container .productbox .detail button:hover {
     background: #0989ff;
 }
+/* Phần bình luận */
+.comment {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.star-and-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.star-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.star-icon svg {
+    margin-right: 5px;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: column;
+}
+.gold-star {
+    color: #FFD700;
+}
+
