@@ -407,3 +407,35 @@
 .products_detail .container .productbox .detail button:hover {
     background: #0989ff;
 }
+
+.prev-btn {
+    position: absolute;
+    width: 20px;
+    height: 45px;
+    margin-top: 7%;
+    color: rgb(20, 106, 210);
+    border: none;
+    border-radius: 13px;
+    background-color: #a6ccf0;
+
+}
+
+.prev-btn:hover {
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    cursor: pointer;
+}
+
+.next-btn {
+    position: absolute;
+    width: 20px;
+    height: 45px;
+    margin-top: 7%;
+    right: 20px;
+    color: rgb(20, 106, 210);
+    border: none;
+    border-radius: 13px;
+    background-color: #a6ccf0;
+}
