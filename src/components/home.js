@@ -38,12 +38,14 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
     };
 
     useEffect(() => {
+
         const intervalId = setInterval(() => {
             handleNext();
         }, 3000);
 
         return () => clearInterval(intervalId);
     }, [currentImage]);
+
 
     useEffect(() => {
         sliderRef.current.scrollLeft = currentImage * sliderRef.current.offsetWidth;
@@ -84,6 +86,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                         </Link>
                     </div>
                     <div className='img_box'>
+
                         <img src='./img/product/ipad.png' alt='Banner' />
                     </div>
                 </div>

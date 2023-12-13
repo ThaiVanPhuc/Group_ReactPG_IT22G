@@ -52,9 +52,15 @@ const Cart = ({ cart, setCart }) => {
                     cart.map((curElm) => {
                         return (
                             <div className='cart_item' key={curElm.id}>
+                              
                                 <div className='img_box'>
                                     <img src={curElm.Img} alt={curElm.Title}></img>
                                 </div>
+                                <div className='extra-content'>
+                                    <h2 className='totalprice'>total: $ {Totalprice}</h2>
+                                    <button className='checkout'>Checkout</button>
+                                </div>
+                               
                                 <div className='detail'>
                                     <div className='detail'>
                                         <h4>{curElm.Cat}</h4>
@@ -68,21 +74,16 @@ const Cart = ({ cart, setCart }) => {
                                         <h4 className='subtotal'>sub total: ${curElm.Price * curElm.Price}</h4>
                                     </div>
                                     <div className='close'>
-                                        <button onClick={() => removeproduct(curElm)}><AiOutlineClose /></button>
+                                        <button onClick={() => removeproduct(curElm)}><AiOutlineClose />Close</button>
                                     </div>
                                 </div>
                             </div>
                         )
                     })
                 }
+
             </div>
-            {
-                cart.length > 0 &&
-                <>
-                    <h2 className='totalprice'>total: $ {Totalprice}</h2>
-                    <button className='checkout'>Checkout</button>
-                </>
-            }
+           
         </>
     )
 }

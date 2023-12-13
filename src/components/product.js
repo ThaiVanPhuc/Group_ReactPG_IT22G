@@ -4,9 +4,10 @@ import { BsEye } from 'react-icons/bs';
 import { AiOutlineHeart, AiOutlineCloseCircle } from 'react-icons/ai';
 import Productdetail from './productdetail';
 import './product.css';
+import { AiFillStar } from 'react-icons/ai';
 
 const Product = ({ product, setProduct, detail, view, close, setClose, addtocart }) => {
-
+    const [comments, setComments] = useState([]);
     const filtterproduct = (product) => {
         const update = Productdetail.filter((x) => {
             return x.Cat === product;
@@ -18,10 +19,15 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
         setProduct(Productdetail);
     };
 
+    const addComment = (newComment) => {
+        setComments([...comments, newComment]);
+    };
+    
     return (
         <>
             {close ? (
                 <div className='product_detail'>
+                    
                     <div className='container'>
                         <button onClick={() => setClose(false)} className='closebtn'>
                             <AiOutlineCloseCircle />
@@ -43,6 +49,49 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                             );
                         })}
                         <div className='productbox'></div>
+                    </div>
+                    <div className='comments-section'>
+                        <h3>Comments</h3>
+                        <div className='comments-list'>
+                                {comments.map((comment, index) => (
+                                    <div className='comment' key={index}>
+                                        <div className='star-and-details'>
+                                            <div className='star-icon'>
+                                                {[...Array(parseInt(comment.stars))].map((star, index) => (
+                                                <AiFillStar className="gold-star" key={index} />
+                                            ))}
+                                            </div>
+                                            <div className='comment-details'>
+                                                <p><strong>{comment.name}</strong></p>
+                                                <p>{comment.comment}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            const newComment = {
+                                name: e.target.elements.name.value,
+                                comment: e.target.elements.comment.value,
+                                stars: e.target.elements.stars.value
+                            };
+                            addComment(newComment);
+                            e.target.elements.name.value = '';
+                            e.target.elements.comment.value = '';
+                            e.target.elements.stars.value = '';
+                        }}>
+                            <input type='text' name='name' placeholder='Your name...' />
+                            <input type='text' name='comment' placeholder='Your comment...' />
+                            <select name='stars'>
+                                <option value='1'>1 star</option>
+                                <option value='2'>2 stars</option>
+                                <option value='3'>3 stars</option>
+                                <option value='4'>4 stars</option>
+                                <option value='5'>5 stars</option>
+                            </select>
+                            <button type='submit'>Send</button>
+                        </form>
                     </div>
                 </div>
             ) : null}
