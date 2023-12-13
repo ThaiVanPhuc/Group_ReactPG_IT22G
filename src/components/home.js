@@ -9,9 +9,10 @@ import { CiShoppingCart } from 'react-icons/ci';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FaEye } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
-import Homeproduct from './homeproduct';
 import './home.css';
 import Chatbox from './chatbox';
+import ProductData from '../db/db.json';
+
 
 import 'react-multi-carousel/lib/styles.css';
 
@@ -51,6 +52,14 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
         sliderRef.current.scrollLeft = currentImage * sliderRef.current.offsetWidth;
     }, [currentImage]);
 
+    const products = ProductData.Productdetails.map((product) => ({
+        id: product.id,
+        Img: product.Img,
+        Cat: product.Cat,
+        Title: product.Title,
+        Price: product.Price,
+    }));
+
     return (
         <>
             {close ? (
@@ -69,7 +78,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
                                     <h2>{curElm.Title}</h2>
                                     <p>A Screen Everyone Will One: Whether your family is streaming or video chatting with friends table A8...</p>
                                     <h3>{curElm.Price}</h3>
-                                    <button>Add To Cart</button>
+                                    <button onClick={() => addtocart(curElm)}>Add To Cart</button>
                                 </div>
                             </div>
                         ))}
@@ -157,28 +166,25 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
             <div className='product'>
                 <h2> Top Product</h2>
                 <div className='container'>
-                    {
-                        Homeproduct.map((curElm) => {
-                            return (
-                                <div className='box' key={curElm.id}>
-                                    <div className='img_box'>
-                                        <img src={curElm.Img} alt={curElm.Title}></img>
-                                        <div className='icon'>
-                                            <li onClick={() => addtocart(curElm)}><CiShoppingCart /></li>
-                                            <li onClick={() => view(curElm)}><FaEye /></li>
-                                            <li><CiHeart /></li>
-                                        </div>
+                    {products.map((curElm) => {
+                        return (
+                            <div className='box' key={curElm.id}>
+                                <div className='img_box'>
+                                    <img src={curElm.Img} alt={curElm.Title}></img>
+                                    <div className='icon'>
+                                        <li onClick={() => addtocart(curElm)}><CiShoppingCart /></li>
+                                        <li onClick={() => view(curElm)}><FaEye /></li>
+                                        <li><CiHeart /></li>
                                     </div>
-                                    <div className='detail'>
-                                        <p>{curElm.Cat}</p>
-                                        <h3>{curElm.Title}</h3>
-                                        <h4>${curElm.Price}</h4>
-                                    </div>
-
                                 </div>
-                            )
-                        })
-                    }
+                                <div className='detail'>
+                                    <p>{curElm.Cat}</p>
+                                    <h3>{curElm.Title}</h3>
+                                    <h4>${curElm.Price}</h4>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
             <div className='banner'>

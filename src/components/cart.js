@@ -52,15 +52,15 @@ const Cart = ({ cart, setCart }) => {
                     cart.map((curElm) => {
                         return (
                             <div className='cart_item' key={curElm.id}>
-                              
+
                                 <div className='img_box'>
                                     <img src={curElm.Img} alt={curElm.Title}></img>
                                 </div>
                                 <div className='extra-content'>
-                                    <h2 className='totalprice'>total: $ {Totalprice}</h2>
-                                    <button className='checkout'>Checkout</button>
+                                    <h2 className='totalprice'>Tổng: $ {Totalprice}</h2>
+                                    <button className='checkout'>Thanh Toán</button>
                                 </div>
-                               
+
                                 <div className='detail'>
                                     <div className='detail'>
                                         <h4>{curElm.Cat}</h4>
@@ -71,10 +71,10 @@ const Cart = ({ cart, setCart }) => {
                                             <input type='text' value={curElm.qty}></input>
                                             <button className='decqty' onClick={() => decqty(curElm)}>-</button>
                                         </div>
-                                        <h4 className='subtotal'>sub total: ${curElm.Price * curElm.qty}</h4>
+                                        <h4 className='subtotal'>Tạm Tính: ${curElm.Price * curElm.qty}</h4>
                                     </div>
                                     <div className='close'>
-                                        <button onClick={() => removeproduct(curElm)}><AiOutlineClose />Close</button>
+                                        <button onClick={() => removeproduct(curElm)}><AiOutlineClose /></button>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ const Cart = ({ cart, setCart }) => {
                 }
 
             </div>
-           
+
         </>
     )
 }

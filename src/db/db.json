@@ -19,7 +19,7 @@
             "Title": "Cancelling Heaphones Wireless.",
             "Cat": "Heaphone",
             "Price": "49",
-            "Img": "./img/product/hinh4.png"
+            "Img": "./img/product/hinh3.png"
         },
         {
             "id": 4,
@@ -69,20 +69,6 @@
             "Cat": "Gaming",
             "Price": "49",
             "Img": "./img/product/hinh2.png"
-        },
-        {
-            "id": 11,
-            "Title": "Echo Show 5 (2nd Gen) Adjustable Stand | Charcoal",
-            "Cat": "Electronics",
-            "Price": "49",
-            "Img": "./img/product/hinh1.png"
-        },
-        {
-            "id": 12,
-            "Title": "Echo Dot smart speaker",
-            "Cat": "Electronics",
-            "Price": "498",
-            "Img": "./img/product/Headphone.png"
         }
     ]
 }

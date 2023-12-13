@@ -346,6 +346,13 @@
 }
 
 /* Phần bình luận */
+
+.comments-section {
+    position: absolute;
+    bottom: 220px;
+    left: 550px;
+}
+
 .comment {
     display: flex;
     flex-direction: column;

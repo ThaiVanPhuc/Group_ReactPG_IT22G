@@ -6,6 +6,8 @@ import Productdetail from './productdetail';
 import './product.css';
 import { AiFillStar } from 'react-icons/ai';
 
+
+
 const Product = ({ product, setProduct, detail, view, close, setClose, addtocart }) => {
     const [comments, setComments] = useState([]);
     const filtterproduct = (product) => {
@@ -35,63 +37,66 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                             return (
                                 <div className='productbox' key={curElm.id}>
                                     <div className='img_box'>
-                                        <img src={curElm.img} alt={curElm.Title}></img>
+                                        <img src={curElm.Img} alt={curElm.Title}></img>
                                     </div>
                                     <div className='detail'>
                                         <h4>{curElm.Cat}</h4>
                                         <h2>{curElm.Title}</h2>
                                         <p>A Screen Everyone Will One: Whether your family is streaming or video chatting with friends table A8...</p>
                                         <h3>{curElm.Price}</h3>
-                                        <button>Add To Cart</button>
+                                        <button onClick={() => addtocart(curElm)}>Add To Cart</button>
                                     </div>
                                 </div>
                             );
                         })}
                         <div className='productbox'></div>
-                    </div>
-                    <div className='comments-section'>
-                        <h3>Comments</h3>
-                        <div className='comments-list'>
-                            {comments.map((comment, index) => (
-                                <div className='comment' key={index}>
-                                    <div className='star-and-details'>
-                                        <div className='star-icon'>
-                                            {[...Array(parseInt(comment.stars))].map((star, index) => (
-                                                <AiFillStar className="gold-star" key={index} />
-                                            ))}
-                                        </div>
-                                        <div className='comment-details'>
-                                            <p><strong>{comment.name}</strong></p>
-                                            <p>{comment.comment}</p>
+                        <div className='comments-section'>
+                            <h3>Comments</h3>
+                            <div className='comments-list'>
+                                {comments.map((comment, index) => (
+                                    <div className='comment' key={index}>
+                                        <div className='star-and-details'>
+                                            <div className='star-icon'>
+                                                {[...Array(parseInt(comment.stars))].map((star, index) => (
+                                                    <AiFillStar className="gold-star" key={index} />
+                                                ))}
+                                            </div>
+                                            <div className='comment-details'>
+                                                <p><strong>{comment.name}</strong></p>
+                                                <p>{comment.comment}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                const newComment = {
+                                    name: e.target.elements.name.value,
+                                    comment: e.target.elements.comment.value,
+                                    stars: e.target.elements.stars.value
+                                };
+                                addComment(newComment);
+                                e.target.elements.name.value = '';
+                                e.target.elements.comment.value = '';
+                                e.target.elements.stars.value = '';
+                            }}>
+                                <input type='text' name='name' placeholder='Your name...' />
+                                <input type='text' name='comment' placeholder='Your comment...' />
+                                <select name='stars'>
+                                    <option value='1'>1 star</option>
+                                    <option value='2'>2 stars</option>
+                                    <option value='3'>3 stars</option>
+                                    <option value='4'>4 stars</option>
+                                    <option value='5'>5 stars</option>
+                                </select>
+                                <button type='submit'>Send</button>
+                            </form>
                         </div>
-                        <form onSubmit={(e) => {
-                            e.preventDefault();
-                            const newComment = {
-                                name: e.target.elements.name.value,
-                                comment: e.target.elements.comment.value,
-                                stars: e.target.elements.stars.value
-                            };
-                            addComment(newComment);
-                            e.target.elements.name.value = '';
-                            e.target.elements.comment.value = '';
-                            e.target.elements.stars.value = '';
-                        }}>
-                            <input type='text' name='name' placeholder='Your name...' />
-                            <input type='text' name='comment' placeholder='Your comment...' />
-                            <select name='stars'>
-                                <option value='1'>1 star</option>
-                                <option value='2'>2 stars</option>
-                                <option value='3'>3 stars</option>
-                                <option value='4'>4 stars</option>
-                                <option value='5'>5 stars</option>
-                            </select>
-                            <button type='submit'>Send</button>
-                        </form>
+
                     </div>
+
+
                 </div>
             ) : null}
 

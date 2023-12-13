@@ -56,5 +56,12 @@ const Homeproduct =
             Price: '723',
             Img: './img/product/watch.png'
         },
+        {
+            id: 9,
+            Title: "Tracker with IP67 Waterproof Pedometer Smart watch",
+            Cat: 'Smart watch',
+            Price: '723',
+            Img: './img/product/watch.png'
+        },
     ]
 export default Homeproduct
