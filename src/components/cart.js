@@ -11,7 +11,7 @@ const Cart = ({ cart, setCart }) => {
             return x.id === product.id
         })
         setCart(cart.map((curElm) => {
-            return curElm.id === product.id ? { exsit, qty: exsit.qty + 1 } : curElm
+            return curElm.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : curElm
         }))
     }
 
@@ -21,7 +21,7 @@ const Cart = ({ cart, setCart }) => {
             return x.id === product.id
         })
         setCart(cart.map((curElm) => {
-            return curElm.id === product.id ? { exsit, qty: exsit.qty - 1 } : curElm
+            return curElm.id === product.id ? { ...exsit, qty: exsit.qty - 1 } : curElm
         }))
     }
     // Remove cart product 
@@ -65,13 +65,13 @@ const Cart = ({ cart, setCart }) => {
                                     <div className='detail'>
                                         <h4>{curElm.Cat}</h4>
                                         <h3>{curElm.Title}</h3>
-                                        <p>Price: ${curElm.Price}</p>
+                                        <p>Price: {curElm.Price}</p>
                                         <div className='qty'>
                                             <button className='incqty' onClick={() => incqty(curElm)}>+</button>
                                             <input type='text' value={curElm.qty}></input>
                                             <button className='decqty' onClick={() => decqty(curElm)}>-</button>
                                         </div>
-                                        <h4 className='subtotal'>sub total: ${curElm.Price * curElm.Price}</h4>
+                                        <h4 className='subtotal'>sub total: ${curElm.Price * curElm.qty}</h4>
                                     </div>
                                     <div className='close'>
                                         <button onClick={() => removeproduct(curElm)}><AiOutlineClose />Close</button>
