@@ -4,35 +4,34 @@ import { Link } from 'react-router-dom';
 import './cart.css';
 
 const Cart = ({ cart, setCart }) => {
-    // Tăng số lượng
+    // increase qty
     const incqty = (product) => {
-        const exsit = cart.find((x) => x.id === product.id);
+        const exist = cart.find((x) => x.id === product.id);
         setCart(
             cart.map((curElm) =>
-                curElm.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : curElm
+                curElm.id === product.id ? { ...exist, qty: exist.qty + 1 } : curElm
             )
         );
     };
 
-    // Giảm số lượng
+    // decrease qty
     const decqty = (product) => {
-        const exsit = cart.find((x) => x.id === product.id);
+        const exist = cart.find((x) => x.id === product.id);
         setCart(
             cart.map((curElm) =>
-                curElm.id === product.id ? { ...exsit, qty: exsit.qty - 1 } : curElm
+                curElm.id === product.id ? { ...exist, qty: exist.qty - 1 } : curElm
             )
         );
     };
 
-    // Xóa sản phẩm khỏi giỏ hàng
-    const removeproduct = (product) => {
-        const exsit = cart.find((x) => x.id === product.id);
-        if (exsit.qty > 0) {
+    // Remove cart product
+    const removeProduct = (product) => {
+        const exist = cart.find((x) => x.id === product.id);
+        if (exist.qty > 0) {
             setCart(cart.filter((x) => x.id !== product.id));
         }
     };
 
-    // Tính tổng giá
     const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0);
 
     const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -42,6 +41,7 @@ const Cart = ({ cart, setCart }) => {
         phone: '',
         email: '',
     });
+    const [error, setError] = useState('');
 
     const handlePayment = () => {
         setShowPaymentModal(true);
@@ -55,29 +55,34 @@ const Cart = ({ cart, setCart }) => {
         }));
     };
 
-    const handlePayOnDelivery = () => {
-        if (
-            userInfo.name === '' ||
-            userInfo.address === '' ||
-            userInfo.phone === '' ||
-            userInfo.email === '' ||
-            !isValidPhone(userInfo.phone) ||
-            !isValidEmail(userInfo.email)
-        ) {
-            console.log('Thông tin không hợp lệ. Vui lòng kiểm tra lại.');
-            return;
-        }
-
-        setShowPaymentModal(false);
-        setCart([]);
-    };
-
     const isValidPhone = (phone) => {
-        return /^\d{10}$/.test(phone) && phone.startsWith('0');
+        const phoneRegex = /^0[0-9]{9}$/;
+        return phoneRegex.test(phone);
     };
 
     const isValidEmail = (email) => {
-        return /\S+@\S+\.\S+/.test(email);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const handlePayOnDelivery = () => {
+        if (!userInfo.name || !userInfo.address || !userInfo.phone || !userInfo.email) {
+            setError('Vui lòng điền đầy đủ thông tin!');
+            return;
+        }
+
+        if (!isValidPhone(userInfo.phone)) {
+            setError('Số điện thoại không hợp lệ!');
+            return;
+        }
+
+        if (!isValidEmail(userInfo.email)) {
+            setError('Email không hợp lệ!');
+            return;
+        }
+        setError('');
+        setShowPaymentModal(false);
+        setCart([]);
     };
 
     return (
@@ -85,14 +90,14 @@ const Cart = ({ cart, setCart }) => {
             <div className='cartcontainer'>
                 {cart.length === 0 && (
                     <div className='emptycart'>
-                        <h2 className='empty'>Giỏ hàng trống</h2>
+                        <h2 className='empty'>Cart is Empty</h2>
                         <Link to='/product' className='emptycartbtn'>
-                            Mua sắm ngay
+                            Shop Now
                         </Link>
                     </div>
                 )}
             </div>
-            <div className='content'>
+            <div className='contant'>
                 {cart.map((curElm) => (
                     <div className='cart_item' key={curElm.id}>
                         <div className='img_box'>
@@ -108,7 +113,7 @@ const Cart = ({ cart, setCart }) => {
                             <div className='detail'>
                                 <h4>{curElm.Cat}</h4>
                                 <h3>{curElm.Title}</h3>
-                                <p>Giá: {curElm.Price}</p>
+                                <p>Price: {curElm.Price}</p>
                                 <div className='qty'>
                                     <button className='incqty' onClick={() => incqty(curElm)}>
                                         +
@@ -121,7 +126,7 @@ const Cart = ({ cart, setCart }) => {
                                 <h4 className='subtotal'>Tạm Tính: ${curElm.Price * curElm.qty}</h4>
                             </div>
                             <div className='close'>
-                                <button onClick={() => removeproduct(curElm)}>
+                                <button onClick={() => removeProduct(curElm)}>
                                     <AiOutlineClose />
                                 </button>
                             </div>
@@ -129,6 +134,7 @@ const Cart = ({ cart, setCart }) => {
                     </div>
                 ))}
             </div>
+            {/* Thanh toán */}
             {showPaymentModal && (
                 <div className='payment-box'>
                     <h2>Đặt Hàng</h2>
@@ -173,15 +179,13 @@ const Cart = ({ cart, setCart }) => {
                         ></input>
                         <br />
                         <br />
+                        <p style={{ color: 'red' }}>{error}</p>
                         <button id='payOnDelivery' onClick={handlePayOnDelivery}>
-                            <Link to='/product' className='emptycartbtn'>
-                                Đặt Hàng Ngay
-                            </Link>
+                            Đặt Hàng Ngay
                         </button>
                         <button id='goBack' onClick={() => setShowPaymentModal(false)}>
                             Quay lại
                         </button>
-                        <p id='paymentStatus' style={{ display: 'none' }}></p>
                     </div>
                 </div>
             )}
