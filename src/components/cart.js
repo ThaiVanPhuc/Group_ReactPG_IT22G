@@ -14,7 +14,7 @@ const Cart = ({ cart, setCart }) => {
             return curElm.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : curElm
         }))
     }
-
+// 
     // Dec Qty
     const decqty = (product) => {
         const exsit = cart.find((x) => {
