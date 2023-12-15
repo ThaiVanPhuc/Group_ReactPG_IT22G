@@ -45,7 +45,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
         }, 3000);
 
         return () => clearInterval(intervalId);
-    }, [currentImage]);
+    }, []);
 
 
     useEffect(() => {

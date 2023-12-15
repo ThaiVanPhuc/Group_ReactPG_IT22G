@@ -33,6 +33,8 @@ const Cart = ({ cart, setCart }) => {
     };
 
     const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0);
+    // end cart
+
 
     // check-out
     const [showPaymentModal, setShowPaymentModal] = useState(false);
