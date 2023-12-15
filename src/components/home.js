@@ -31,7 +31,7 @@ const Home = ({ detail, view, close, setClose, addtocart }) => {
     ];
 
     const handlePrev = () => {
-        setCurrentImage((prevImage) => (prevImage - 1 + images.length) % images.length);
+        setCurrentImage((prevImage) => (prevImage - 1) + images.length);
     };
 
     const handleNext = () => {
